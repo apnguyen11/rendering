@@ -52,7 +52,7 @@ function renderPokerHand(pokerHand) {
         
         return `
         
-            <div style="display: flex; flex-wrap: wrap; width: 200px">
+            <div style="display: flex; flex-wrap: wrap; width: 200px; margin: 40px">
             
                 <img style=" width: 200px; height: auto; padding = 10px" src="cards/${x}.png">
             
@@ -64,7 +64,7 @@ function renderPokerHand(pokerHand) {
    }
 
 
-    var myArray = pokerHand.map(fullHouse).join("space");
+    var myArray = pokerHand.map(fullHouse).join("");
     return myArray;
 }
 

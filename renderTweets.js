@@ -1,10 +1,60 @@
 
 function renderTweets(tweets) {
-    return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(tweets)}</code>
-        </div>
+    
+
+
+    var styles = `
+    .flex{
+        display: block;
+        
+    }
     `
+ 
+    var styleSheet = document.createElement("style")
+    styleSheet.type = "text/css"
+    styleSheet.innerText = styles
+    document.head.appendChild(styleSheet)
+
+    function makeTweet(obj){
+        if(obj.user.username == "Jaden Smith"){
+            var x = "jaden.png";
+        } else if(obj.user.username == "DigitalCrafts Bootcamp"){
+            var x = "digitalcrafts.jpg";
+        } else {
+            null
+        }
+
+        return `
+        <div id="parent" style="padding: 25px; padding-top: 20px; border: solid 1px black; margin-top: 40px">
+            <div style="display: flex; padding: 25px" >
+                <img src="twitterpics/${x}" alt="twitpic" style="width: 65px; height: 65px; border-radius: 50%">
+    
+                    <div style="padding-left: 10px">
+                    ${obj.user.username} <img src="twitterpics/verified.jpg" style="width: 20px; height: 20px; margin-top: -4px" >
+                    <br>
+                    <div style=" color: grey">
+                    ${obj.user.handle}
+                    </div>
+                    
+                    </div>
+                    
+               
+            </div>
+            <div style="font-size: 45px">${obj.text} <hr></div>
+            <div>  
+            <img src="twitterpics/reply.png" style="width: 25px; height: 25px; margin-top: -3px; margin-right: 6px"> ${obj.replies}K 
+            <img src="twitterpics/retweet.png" style="width: 30px; height: 25px; margin-top: -3px; margin-left: 21px; margin-right: 6px"> ${obj.retweets}K 
+            <img src="twitterpics/like.png" style="width: 25px; height: 25px; margin-top: -3px; margin-left: 21px; margin-right: 6px"> ${obj.likes}K
+            <img src="twitterpics/mail.png" style="width: 31px; height: 25px; margin-top: -3px; margin-left: 50px">
+            </div>
+        </div>
+        
+        `
+    }
+
+    var myArray = tweets.map(makeTweet).join("");
+    return myArray;
+
 }
 
 function tweets() {

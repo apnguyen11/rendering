@@ -6,7 +6,7 @@ function renderNametags(nametags) {
         return `
         
         <style="flex-direction: column">
-        <div style="width: 325px; height: 225px; display:flex; background-color: red;  border: solid 1px black;  flex-direction: column;">
+        <div style="width: 325px; height: 225px; display:flex; background-color: red;  border: solid 1px black;  flex-direction: column; margin-top: 40px">
                         <div style="background-color: blue; flex: 1; display: flex; align-items: center; justify-content: center; color: white;
                         font-family: san-serif; font-size: 30px  ">
                             Hello, my name is:

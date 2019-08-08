@@ -14,6 +14,7 @@ function renderStudents(students) {
    styleSheet.type = "text/css"
    styleSheet.innerText = styles
    document.head.appendChild(styleSheet)
+
     function rollCall(obj){
         if(obj.isPresent == true){
             var x = "Present";
@@ -30,8 +31,8 @@ function renderStudents(students) {
         <div style="flex-direction: column;  justify-content: center ">
             <div style="height: 250px; display: flex">
                 <div style="flex:0.7"></div>
-                <div style="flex:2; display:flex; align-items: center; background-color: ${color}; flex-direction: column; margin: 20px; justify-content: center"> 
-                    <div style="display: flex; padding-top: auto; font-size: 60px">
+                <div class="shadow" style="flex:2; display:flex; align-items: center; background-color: ${color}; flex-direction: column; margin: 20px; justify-content: center"> 
+                    <div  style="display: flex; padding-top: auto; font-size: 60px">
                     ${obj.name}
 
                     </div>

@@ -1,15 +1,30 @@
 
 function renderMovies(movies) {
    
+
+    var styles = `
+    .flex{
+        display: block;
+        color: black;
+    }
+    `
+ 
+    var styleSheet = document.createElement("style")
+    styleSheet.type = "text/css"
+    styleSheet.innerText = styles
+    document.head.appendChild(styleSheet)
     function makeMovie(obj){
+       
+
+
         return `
-        <div class="card mb-3" style="max-width: 540px;">
-        <div class="row no-gutters">
+        <div class="card mb-3 bg-light" style="max-width: 540px;" >
+        <div class="row no-gutters" style="padding: 15px; padding-top:20px; border-radius: 15px">
           <div class="col-md-4">
-            <img src="..." class="card-img" alt="...">
+            <img src="${obj.poster}" class="card-img" alt="batman" style= "padding-right: 15px">
           </div>
-          <div class="col-md-8">
-            <div class="card-body">
+          <div id="cardmargin1" class="card mb-3 col-md-8 " >
+            <div class="card-body" ">
               <h5 id="movieMargin" class="card-title">${obj.title}</h5>
               <p class="card-text">${obj.year}</p>
               <h2 class="card-text"><small class="text-muted">${obj.imbID}
