@@ -1,10 +1,28 @@
 
 function renderNametags(nametags) {
-    return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(nametags)}</code>
-        </div>
-    `
+
+  
+    function makeTag(obj){
+        return `
+        
+        <style="flex-direction: column">
+        <div style="width: 325px; height: 225px; display:flex; background-color: red;  border: solid 1px black;  flex-direction: column;">
+                        <div style="background-color: blue; flex: 1; display: flex; align-items: center; justify-content: center; color: white;
+                        font-family: san-serif; font-size: 30px  ">
+                            Hello, my name is:
+                        </div>
+                        <div style="flex: 2; background-color:white; justify-content: center; align-content: center; font-family: san-serif; font-size: 35px; display: flex; align-items: center; justify-content: center; color: black ">
+                             ${obj}
+
+                        </div>
+                </div>
+           
+        `
+     }
+    
+   
+    var myArray = nametags.map(makeTag).join("")
+    return myArray;
 }
 
 function nametags() {

@@ -1,1 +1,27 @@
 /* Type whatever CSS you need here! */
+#cards {
+    padding-top: 20px;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 20px;
+    width: 250px;
+    border-radius: 15px;
+}
+
+#margin{
+
+    margin-bottom: 0px;
+}
+
+#margin2{
+
+    margin-bottom: 0px;
+}
+
+#movieMargin{
+
+    margin-bottom: 0px;
+}
+
+
+

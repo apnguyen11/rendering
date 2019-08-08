@@ -1,10 +1,30 @@
 
 function renderMovies(movies) {
-    return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(movies)}</code>
+   
+    function makeMovie(obj){
+        return `
+        <div class="card mb-3" style="max-width: 540px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="..." class="card-img" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 id="movieMargin" class="card-title">${obj.title}</h5>
+              <p class="card-text">${obj.year}</p>
+              <h2 class="card-text"><small class="text-muted">${obj.imbID}
+              <br> ${obj.imdbRating} / 10</small></h2>
+              <h2 class="card-text"><small class="text-muted">${obj.rottenTomatoesRating * 100}%</small></h2>
+            </div>
+          </div>
         </div>
-    `
+      </div>     
+        `
+    };
+
+    var myArray = movies.map(makeMovie).join("");
+    return myArray;
+
 }
 
 function movies() {
