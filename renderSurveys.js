@@ -1,9 +1,44 @@
 
-function renderSurveys(surveys) {
+function renderSurveys(surveysAbstraction) {
+    return surveysAbstraction.map(makeSurvey).join("");
+   
+}
+
+function makeSurvey(eachSurvey){
     return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(surveys)}</code>
+        <div>
+            <div>
+                <h1> ${eachSurvey.title}</h1>
+                <hr>
+            </div>
+            ${mapFields(eachSurvey.fields)}
+
         </div>
+    `
+}
+
+function mapFields(questions){
+    return questions.map(pickQuestions).join("")
+
+}
+
+function pickQuestions(questions){
+    return `
+        <div>
+            ${questions.label}
+            <input type="radio">${mapOptions(questions.options)}</input>
+        </div>
+    `
+}
+
+function mapOptions(option){
+   
+
+    return option.map(pickOptions).join("");
+}
+
+function pickOptions(picks){
+    return `${picks}
     `
 }
 
@@ -49,7 +84,11 @@ function surveys() {
                 },
                 {
                     label: "In 3000 words or more, explain what's so great about Adam?",
-                    type: "text"
+                    type: "text",
+                    options: [
+                        "yes",
+                        "no"
+                    ]
                 }
             ],
             submitButtonText: "I'm Done"

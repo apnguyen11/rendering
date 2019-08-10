@@ -13,6 +13,8 @@ function renderMovies(movies) {
     styleSheet.type = "text/css"
     styleSheet.innerText = styles
     document.head.appendChild(styleSheet)
+
+    
     function makeMovie(obj){
        
 
@@ -27,9 +29,11 @@ function renderMovies(movies) {
             <div class="card-body" ">
               <h5 id="movieMargin" class="card-title">${obj.title}</h5>
               <p class="card-text">${obj.year}</p>
-              <h2 class="card-text"><small class="text-muted">${obj.imbID}
+              <h2 class="card-text"><small class="text-muted">IMDB:
               <br> ${obj.imdbRating} / 10</small></h2>
-              <h2 class="card-text"><small class="text-muted">${obj.rottenTomatoesRating * 100}%</small></h2>
+              <h2 class="card-text"><small class="text-muted">
+              Rotten Tomatoes: <br>
+              ${obj.rottenTomatoesRating * 100}%</small></h2>
             </div>
           </div>
         </div>

@@ -4,6 +4,7 @@ function renderRestaurants(restaurants) {
     // https://commons.wikimedia.org/wiki/Category:SVG_playing_cards
     
     function display(obj){
+        
         var styles = `
    .flex{
        display: flex;

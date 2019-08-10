@@ -1,11 +1,70 @@
 
-function renderAlbums(albums) {
+// picks the artist
+function renderAlbums(albumsAbstraction) {
+
+    return albumsAbstraction.map(makeArtistPage).join("");
+     
+ }
+
+ // makes the artist page with artist title
+ function makeArtistPage(eachArtist){
     return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(albums)}</code>
-        </div>
+    <div>
+            <div style="margin-top: 60px">
+                <h1>${eachArtist.artist}</h1>
+                <hr>
+            </div>
+        ${mapAlbum(eachArtist.albums)}
+
+    </div>
     `
 }
+function mapAlbum(artistsAlbums){
+    return artistsAlbums.map(pickAlbum).join("")
+}
+
+// pick album cover and title, passes songs to map function
+function pickAlbum(pick){
+    return `
+        <div>
+            ${pick.albumCover} ${pick.title}
+            <ul>
+                ${mapSongs(pick.songs)}
+            </ul>
+        </div>
+        `
+}
+
+// maps songs
+function mapSongs(song){
+    return song.map(pickSong).join("")
+}
+
+function pickSong(songTitle){
+    return `
+        <li>
+            ${songTitle.title}
+            ${songTitle.length}
+        </li>
+    `
+}
+
+/*
+<div style="margin-top: 90px">
+            
+            <h2><img src="twitterpics/creed.jpeg" alt="creedalbum" style="width: 75px; height: 75px; margin-top: -50px; margin-right: 30px"; margin-bottom: 20px>  </h2>
+        </div>
+        <hr>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+*/
+
+
+
+
+
 
 function albums() {
     var content = document.getElementById('content');
