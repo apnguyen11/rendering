@@ -1,6 +1,24 @@
 
+
+
+
+
 function renderSurveys(surveysAbstraction) {
+
+    var styles = `
+.flex{
+    display: block;
+    color: black;
+}
+`
+
+var styleSheet = document.createElement("style")
+styleSheet.type = "text/css"
+styleSheet.innerText = styles
+document.head.appendChild(styleSheet)
+
     return surveysAbstraction.map(makeSurvey).join("");
+    
    
 }
 

@@ -27,7 +27,7 @@ function mapAlbum(artistsAlbums){
 function pickAlbum(pick){
     return `
         <div>
-            ${pick.albumCover} ${pick.title}
+            <img style = "width: 80px; height: 80px" src="${pick.albumCover}"> ${pick.title}
             <ul>
                 ${mapSongs(pick.songs)}
             </ul>
